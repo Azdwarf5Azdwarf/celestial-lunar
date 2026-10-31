@@ -18,6 +18,10 @@ Unix 1793440743. Kod: `at_klocka.py`, test: `test_at_klocka.py`.
 
 Skrivet klockan 11:03. Altair bekraftade regeln: **åt = minuter kvar till nasta hela timme.** (Forsta exemplet "12:30 = 30åt12" ersatts: 12:30 = 30åt13.)
 
+## Karna 4 (ordagrant, orord)
+
+> unix moment, kvar till timmen, i just kvar till timmen räknar man alltid i differensen mellan solen och månen makes sense
+
 ## Vad klockan visar
 
 Tre parallella tider, alltid i den har ordningen:
