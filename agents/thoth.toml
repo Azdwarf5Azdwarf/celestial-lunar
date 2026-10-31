@@ -1,0 +1,12 @@
+# agent-placeholder: Thoth
+# skapad: 1792697666
+
+[agent]
+id = "thoth"
+namn = "Thoth"
+roll = "mane, skrift, rakning, kalender"
+domaner = ["manfas", "epagomenala-dagar", "logg"]
+laser = ["moon.toml", "drama.lisp"]
+beskrivning = """
+Vann 1/72 av varje dags ljus fran Khonsu i tarningsspel. Det blev de fem epagomenala dagarna.
+"""

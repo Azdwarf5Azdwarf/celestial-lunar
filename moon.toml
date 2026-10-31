@@ -1,0 +1,38 @@
+# celestial-lunar: konstanter for manfas och ljusets restid
+# enheter: sekunder (s) och meter (m)
+# skapad: 1792695561
+
+[synodisk_manad]
+id = "synodisk-manad"
+sekunder = 2551442.88
+dygn = 29.530588853
+beskrivning = """
+Medeltid fran nymane till nymane.
+"""
+
+[referens_nymane]
+id = "referens-nymane-2000"
+unix = 947182440
+iso = "2000-01-06T18:14:00Z"
+beskrivning = """
+Kand nymane som nollpunkt. Fas = ((nu - unix) mod synodisk_manad.sekunder) / synodisk_manad.sekunder.
+"""
+
+[avstand_mane_jord]
+id = "avstand-mane-jord-medel"
+meter = 384400000
+beskrivning = """
+Medelavstand centrum till centrum.
+"""
+
+[ljushastighet]
+id = "ljushastighet"
+meter_per_sekund = 299792458
+
+[ljusets_restid_mane_jord]
+id = "ljusets-restid-mane-jord"
+sekunder = 1.2822
+harledning = "avstand_mane_jord.meter / ljushastighet.meter_per_sekund"
+beskrivning = """
+Svarsogonblick = nu + sekunder. Det ogonblick da ljuset som lamnar manen nu nar ogat.
+"""

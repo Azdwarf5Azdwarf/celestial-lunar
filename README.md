@@ -10,3 +10,11 @@ Using that as a refrence to the most possible exact moment to "answer" based on 
 for the light to reach the eye from the moon to earth
 
 Something like this sounds cool enough
+
+Together with this turn it into the sun and moon external module
+
+~/dev/multi-calendar/egyptian/README.md
+
+## Åt-klockan
+
+`python3 at_klocka.py` - 12:30 = 30åt12, sol och mane, inget mer. Se `docs/at-klocka.md`.

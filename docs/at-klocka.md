@@ -1,0 +1,45 @@
+# Åt-klockan: Altairs personliga klocka
+
+Unix 1793440743. Kod: `at_klocka.py`, test: `test_at_klocka.py`.
+
+## Karna (ordagrant, orord)
+
+> Kan du lagga in till ~/dev/celestial-lunar min personliga Åt klocka. Dvs inkludera den nya filerna MED denna filosofi hur hanger det ihop personligt?
+>
+> Typ 12:30 är 30åt12 men inkludera planertarna kanske for klockan bara solen och manens differens inget mer?
+
+## Vad klockan visar
+
+```
+[1793440743]
+sol       59åt10
+mane      42åt18
+skillnad  16åt16   (fas 0.678)
+```
+
+- **sol**: vaggklockan. 12:30 blir `30åt12`. Minuterna forst, sedan timmen de ar pa vag mot.
+- **mane**: samma klocka, fast manens. Manen ligger efter solen med vinkeln mellan dem (fas x 360 grader, 15 grader per timme).
+- **skillnad**: hur langt efter. Nymane `0åt0`, de gar ihop. Fullmane ca `0åt12`, de star mitt emot varandra.
+
+Bara solen och manen, inget mer. Planeterna ar inte med i klockan. De bor i `docs/planning/poi-date.md` (tid utan t) och `docs/planning/sovresa/`.
+
+## Personligt (Altairs ord, 2026-10-28, pa vag till bussen)
+
+> I can see the sun and I can see the moon and the moon is behind me to my right, the Sun in front. It feels like I am connected to them, or metaphysically so to speak.
+
+Samma dag: beslutet att ata och dricka kom efter att han sag solen och manen. Lunchen flyttades till solens hogsta punkt. Hans egen teori om forfaderna i Mellanostern fore 1900, utan mekaniska klockor: "the Sun is sorted right there".
+
+## Lasning (utanfor karnan)
+
+- Klockan ar den han redan anvander: solen framfor, manen bakom. Siffrorna skriver bara ner det han ser.
+- `skillnad` ar avstandet mellan dem pa himlen, omraknat till tid. Det ar det enda som klockan lagger till.
+
+## Hur filerna hanger ihop
+
+- `moon.toml`: rytmen (synodisk manad, nymane-nollpunkt, ljusets restid 1,28 s). Klockan laser harifran.
+- `at_klocka.py`: sol och mane som `minutåttimme`.
+- `test_moon.py` / `test_at_klocka.py`: kollar mot NASA:s formorkelser (ny- och fullmanar).
+- `agents/khonsu.toml`, `agents/thoth.toml`: platshallarna som ror sig med manen. Khonsu bar ljuset de 1,28 sekunderna.
+- `drama.lisp`: handelserna, en rad per handelse, unix-tid forst.
+- `docs/tidvatten.md`: manens drag pa manniskan.
+- `docs/planning/`: planeterna, for senare.
