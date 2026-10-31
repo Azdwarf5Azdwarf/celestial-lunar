@@ -12,20 +12,26 @@ Unix 1793440743. Kod: `at_klocka.py`, test: `test_at_klocka.py`.
 
 > ska vi ta med xnix och dar har vi perfektion alltsa att tifen måste visas just så i 3 parallellt?
 
+## Karna 3 (ordagrant, orord)
+
+> 57at12 nu exempelvis
+
+Skrivet klockan 11:03. Altair bekraftade regeln: **åt = minuter kvar till nasta hela timme.** (Forsta exemplet "12:30 = 30åt12" ersatts: 12:30 = 30åt13.)
+
 ## Vad klockan visar
 
 Tre parallella tider, alltid i den har ordningen:
 
 ```
 unix  1793440743
-sol   59åt10
-mane  42åt18
+sol   1åt11
+mane  18åt19
 ```
 
 - **unix**: sanningen for nar (samma som stampeln i varje svar, AFC-001). Ingen zon, ingen tolkning.
-- **sol**: vaggklockan. 12:30 blir `30åt12`. Minuterna forst, sedan timmen de ar pa vag mot.
+- **sol**: vaggklockan. Minuter kvar, sedan timmen de ar pa vag mot. 11:03 blir `57åt12`, 12:30 blir `30åt13`, 12:00 blir `0åt12`.
 - **mane**: samma klocka, fast manens. Manen ligger efter solen med vinkeln mellan dem (fas x 360 grader, 15 grader per timme).
-- **skillnad** (finns i koden, visas inte): hur langt efter. Nymane `0åt0`, de gar ihop. Fullmane ca `0åt12`, de star mitt emot varandra.
+- **skillnad** (finns i koden, visas inte): hur langt efter, i timmar och minuter. Nymane ca 0 h, de gar ihop. Fullmane ca 12 h, de star mitt emot varandra.
 
 Bara solen och manen, inget mer. Planeterna ar inte med i klockan. De bor i `docs/planning/poi-date.md` (tid utan t) och `docs/planning/sovresa/`.
 
@@ -43,7 +49,7 @@ Samma dag: beslutet att ata och dricka kom efter att han sag solen och manen. Lu
 ## Hur filerna hanger ihop
 
 - `moon.toml`: rytmen (synodisk manad, nymane-nollpunkt, ljusets restid 1,28 s). Klockan laser harifran.
-- `at_klocka.py`: sol och mane som `minutåttimme`.
+- `at_klocka.py`: unix, sol och mane, med sol och mane som `minuterkvaråttimme`.
 - `test_moon.py` / `test_at_klocka.py`: kollar mot NASA:s formorkelser (ny- och fullmanar).
 - `agents/khonsu.toml`, `agents/thoth.toml`: platshallarna som ror sig med manen. Khonsu bar ljuset de 1,28 sekunderna.
 - `drama.lisp`: handelserna, en rad per handelse, unix-tid forst.

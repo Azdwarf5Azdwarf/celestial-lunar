@@ -1,9 +1,9 @@
-"""At-klocka: Altairs personliga klocka. 12:30 = 30åt12.
+"""At-klocka: Altairs personliga klocka. Minuter kvar till timmen: 11:03 = 57åt12.
 
 Tre parallella tider, alltid visade sa har:
     unix  1793440743
-    sol   59åt10
-    mane  42åt18
+    sol   1åt11
+    mane  18åt19
 
 Bara solen och manen, inget mer.
 - Solen ar vaggklockan (lokal tid i Europe/Stockholm).
@@ -33,8 +33,10 @@ def las_konstanter():
 
 
 def at(timme, minut):
-    """12, 30 -> '30åt12'."""
-    return f"{minut}åt{timme}"
+    """Minuter kvar till nasta hela timme. 11:03 -> '57åt12', 12:00 -> '0åt12'."""
+    if minut == 0:
+        return f"0åt{timme}"
+    return f"{60 - minut}åt{(timme + 1) % 24}"
 
 
 def manens_fas(unix, k):
@@ -58,7 +60,7 @@ def klocka(unix, k):
         "unix": int(unix),
         "sol": at(lokal.hour, lokal.minute),
         "mane": at(mane // 3600, mane % 3600 // 60),
-        "skillnad": at(int(slap) // 3600, int(slap) % 3600 // 60),
+        "skillnad": f"{int(slap) // 3600} h {int(slap) % 3600 // 60} min",
         "fas": round(manens_fas(unix, k), 3),
     }
 

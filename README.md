@@ -17,4 +17,4 @@ Together with this turn it into the sun and moon external module
 
 ## Åt-klockan
 
-`python3 at_klocka.py` - 12:30 = 30åt12, sol och mane, inget mer. Se `docs/at-klocka.md`.
+`python3 at_klocka.py` - unix, sol och mane parallellt. Minuter kvar till timmen: 11:03 = 57åt12. Se `docs/at-klocka.md`.
