@@ -4,7 +4,7 @@ Kor: python3 test_at_klocka.py
 """
 from datetime import datetime
 
-from at_klocka import ZON, at, klocka, las_konstanter, manens_slapning
+from at_klocka import ZON, at, klocka, las_konstanter, manens_slapning, rader
 
 # en dag av fasfel = ca 49 min skillnad i klockan
 TOLERANS_SEKUNDER = 3600
@@ -27,6 +27,10 @@ def main():
 
     halv_ett = datetime(2026, 10, 31, 12, 30, tzinfo=ZON).timestamp()
     fall.append(("sol 2026-10-31 12:30", klocka(halv_ett, k)["sol"] == "30åt12"))
+
+    tre = rader(klocka(1793440743, k))
+    fall.append(("tre rader: unix, sol, mane",
+                 tre == ["unix  1793440743", "sol   59åt10", "mane  42åt18"]))
 
     # NASA-formorkelser: nymane = sol och mane ihop, fullmane = 12 h isar
     ny = manens_slapning(unix("2026-08-12T17:46:00Z"), k)

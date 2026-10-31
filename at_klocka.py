@@ -1,5 +1,10 @@
 """At-klocka: Altairs personliga klocka. 12:30 = 30åt12.
 
+Tre parallella tider, alltid visade sa har:
+    unix  1793440743
+    sol   59åt10
+    mane  42åt18
+
 Bara solen och manen, inget mer.
 - Solen ar vaggklockan (lokal tid i Europe/Stockholm).
 - Manen ar samma klocka minus manens eftersläpning: vinkeln mellan sol och
@@ -58,13 +63,18 @@ def klocka(unix, k):
     }
 
 
+def rader(r):
+    """Tre parallella tider, alltid i den har ordningen: unix, sol, mane."""
+    return [
+        f"unix  {r['unix']}",
+        f"sol   {r['sol']}",
+        f"mane  {r['mane']}",
+    ]
+
+
 def main():
     unix = int(sys.argv[1]) if len(sys.argv) > 1 else int(time.time())
-    r = klocka(unix, las_konstanter())
-    print(f"[{r['unix']}]")
-    print(f"sol       {r['sol']}")
-    print(f"mane      {r['mane']}")
-    print(f"skillnad  {r['skillnad']}   (fas {r['fas']})")
+    print("\n".join(rader(klocka(unix, las_konstanter()))))
 
 
 if __name__ == "__main__":

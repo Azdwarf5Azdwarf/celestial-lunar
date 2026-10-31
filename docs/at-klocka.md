@@ -8,18 +8,24 @@ Unix 1793440743. Kod: `at_klocka.py`, test: `test_at_klocka.py`.
 >
 > Typ 12:30 är 30åt12 men inkludera planertarna kanske for klockan bara solen och manens differens inget mer?
 
+## Karna 2 (ordagrant, orord)
+
+> ska vi ta med xnix och dar har vi perfektion alltsa att tifen måste visas just så i 3 parallellt?
+
 ## Vad klockan visar
 
+Tre parallella tider, alltid i den har ordningen:
+
 ```
-[1793440743]
-sol       59åt10
-mane      42åt18
-skillnad  16åt16   (fas 0.678)
+unix  1793440743
+sol   59åt10
+mane  42åt18
 ```
 
+- **unix**: sanningen for nar (samma som stampeln i varje svar, AFC-001). Ingen zon, ingen tolkning.
 - **sol**: vaggklockan. 12:30 blir `30åt12`. Minuterna forst, sedan timmen de ar pa vag mot.
 - **mane**: samma klocka, fast manens. Manen ligger efter solen med vinkeln mellan dem (fas x 360 grader, 15 grader per timme).
-- **skillnad**: hur langt efter. Nymane `0åt0`, de gar ihop. Fullmane ca `0åt12`, de star mitt emot varandra.
+- **skillnad** (finns i koden, visas inte): hur langt efter. Nymane `0åt0`, de gar ihop. Fullmane ca `0åt12`, de star mitt emot varandra.
 
 Bara solen och manen, inget mer. Planeterna ar inte med i klockan. De bor i `docs/planning/poi-date.md` (tid utan t) och `docs/planning/sovresa/`.
 
