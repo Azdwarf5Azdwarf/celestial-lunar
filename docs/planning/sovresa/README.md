@@ -15,6 +15,7 @@ python sovresa.py --bed 00:30 --wake 07:30 --awake 10 10 --toml >> dagbok.toml
 
 ## Automate
 
-`whoop.py` is a stub. With a WHOOP (or any sleep tracker that gives
-start, end, and awake-time), `--whoop` replaces the manual input and the
-whole thing becomes a cron job that appends one TOML block per night.
+`armband.py` is a stub and an example. With any standard fitness bracelet
+that has a sleep API (Fitbit, Garmin, Oura, WHOOP, ...) giving start, end,
+and awake-time, `--armband` replaces the manual input and the whole thing
+becomes a cron job that appends one TOML block per night.

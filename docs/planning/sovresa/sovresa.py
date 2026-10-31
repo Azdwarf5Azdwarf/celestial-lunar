@@ -6,7 +6,7 @@ value = sum over planets of (orbital speed km/s * seconds asleep)
 Usage:
   sovresa.py --bed 00:30 --wake 07:30 --awake 10 10
   sovresa.py --seconds 24000
-  sovresa.py --whoop            # reads last night from WHOOP (see whoop.py)
+  sovresa.py --armband          # reads last night from a fitness bracelet (see armband.py)
   sovresa.py ... --toml         # print a TOML block for the dagbok
 """
 import argparse
@@ -60,20 +60,20 @@ def main() -> None:
     p.add_argument("--wake")
     p.add_argument("--awake", nargs="*", type=int, default=[], help="minutes awake, per wake-up")
     p.add_argument("--seconds", type=int)
-    p.add_argument("--whoop", action="store_true")
+    p.add_argument("--armband", action="store_true")
     p.add_argument("--date", default=dt.date.today().isoformat())
     p.add_argument("--toml", action="store_true")
     a = p.parse_args()
 
-    if a.whoop:
-        from whoop import last_night_asleep_seconds
-        seconds, source = last_night_asleep_seconds(), "whoop"
+    if a.armband:
+        from armband import last_night_asleep_seconds
+        seconds, source = last_night_asleep_seconds(), "armband"
     elif a.seconds is not None:
         seconds, source = a.seconds, "manual"
     elif a.bed and a.wake:
         seconds, source = asleep_seconds(a.bed, a.wake, a.awake), "manual"
     else:
-        sys.exit("give --bed/--wake, --seconds, or --whoop")
+        sys.exit("give --bed/--wake, --seconds, or --armband")
 
     km = planet_km(seconds)
     if a.toml:
