@@ -20,7 +20,11 @@ Idag raknar klockan manen med medelmanaden i `moon.toml`. Det ar enkelt men grov
 - **Meeus, "Astronomical Algorithms", kap. 47.** Manens position med ren Python, inga beroenden. Ca 100 rader tabeller. Noggrannhet ca 10 bagsekunder, langt battre an minuter.
 - **Skyfield** (`pip install skyfield` + JPL-filen de421.bsp, ca 17 MB). Exakt, och ger manens upp- och nedgang for en plats direkt. Bryter mot "inga beroenden".
 
-Forslag: Meeus, sa att klockan forblir fristaende.
+Forslag: Meeus, sa att klockan forblir fristaende. Boken ligger i lasistan: `~/claudius-journeys/_BOOKS/att-lasa/09-meeus-astronomical-algorithms.md`.
+
+> tycker faktiskt ifall de blir en poi kalender borjar man just har och bygger utat
+
+(Altair, 2026-10-31, ordagrant.) Åt-klockan ar karnan; en poi-kalender byggs utat harifran.
 
 ## Hur det kollas
 
